@@ -1,0 +1,10 @@
+  <div class="list-group-item flex-column align-items-start">
+    <div class="d-flex w-100 justify-content-between">
+      <h5 class="mb-1">{{ post.title }}</h5>
+      <small class="text-muted">{{ post.created_at | date }}</small>
+    </div>
+    <p class="mb-1">{{ post.content }}</p>
+    <button type="button" class="btn btn-success">love it</button>
+    &nbsp;
+    <button type="button" class="btn btn-danger">don't love it</button>
+  </div>
