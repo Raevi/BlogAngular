@@ -8,11 +8,10 @@ import { Post } from '../model/Post';
 })
 export class PostListComponent implements OnInit {
 
-  @Input() posts: Array<Post>
+  @Input() public posts: Array<Post>
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }
