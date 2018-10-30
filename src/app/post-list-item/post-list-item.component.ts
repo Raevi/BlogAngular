@@ -1,26 +1,19 @@
-import { Component, EventEmitter, OnInit, Input, Output } from '@angular/core';
-import { Post } from '../model/Post';
-import { post } from 'selenium-webdriver/http';
+import { Component, Input } from '@angular/core';
+import { PostService, Post } from '../model/PostService';
 
 @Component({
   selector: 'app-post-list-item',
   templateUrl: './post-list-item.component.html',
   styleUrls: ['./post-list-item.component.scss']
 })
-export class PostListItemComponent implements OnInit {
+export class PostListItemComponent {
 
   @Input() post: Post;
+  @Input() index: number;
 
-  constructor() { }
+  constructor(private postService: PostService) { }
 
-  ngOnInit() {
-  }
-
-  onLoveIt() {
-    console.log('+1')
-  }
-
-  onDontLoveIt() {
-    console.log('-1')
+  onLoveIt(value: number) {
+    this.postService.incrementLikeItOf(this.index, value);
   }
 }

@@ -3,13 +3,12 @@
                  'align-items-start ': true, 
                  'list-group-item-success':  post.loveIts > 0,
                  'list-group-item-danger':  post.loveIts < 0}">
-
     <div class="d-flex w-100 justify-content-between">
       <h5 class="mb-1">{{ post.title }}</h5>
       <small class="text-muted">{{ post.created_at | date }}</small>
     </div>
     <p class="mb-1">{{ post.content }}</p>
-    <button type="button" class="btn btn-success" (click)="onLoveIt()">love it</button>
+    <button type="button" class="btn btn-success" (click)="onLoveIt(1)">love it</button>
     &nbsp;
-    <button type="button" class="btn btn-danger" (click)="onDontLoveIt()">don't love it</button>
+    <button type="button" class="btn btn-danger" (click)="onLoveIt(-1)">don't love it</button>
   </div>
