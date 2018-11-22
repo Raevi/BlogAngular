@@ -28,4 +28,5 @@ export class AuthComponent implements OnInit {
     this.authService.signOut();
     this.authStatus = this.authService.isAuth;
   }
+  
 }
