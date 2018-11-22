@@ -6,11 +6,15 @@ import { PostService, Post } from '../model/PostService';
   templateUrl: './post-list.component.html',
   styleUrls: ['./post-list.component.scss']
 })
-export class PostListComponent {
+export class PostListComponent implements OnInit {
 
-  @Input() public posts: Post[]
+  posts: Post[]
 
   constructor(private postService: PostService) { }
+
+  ngOnInit() {
+    this.posts = this.postService.posts;
+  }
 
   onReset(){
     this.postService.resetOnAll()

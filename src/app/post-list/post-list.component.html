@@ -1,15 +1,10 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h2>{{ "Posts" | uppercase }}</h2>
-      <div class="list-group">
-        <app-post-list-item *ngFor="let post of posts; let i = index" [post]="post" [index]="i"></app-post-list-item>
-      </div>
-    </div>
+<div class="col-xs-12">
+  <h2>{{ "Posts" | uppercase }}</h2>
+  <div class="list-group">
+    <app-post-list-item *ngFor="let post of posts; let i = index" [post]="post" [index]="i"></app-post-list-item>
   </div>
-  <div class="row">
-    <div class="col-xs-12">
-      <button class="btn btn-success" (click)="onReset()">Réinitialiser</button>
-    </div>
+  <div>
+    <h3>Options</h3>
+    <button class="btn btn-success" (click)="onReset()">Réinitialiser</button>
   </div>
 </div>
