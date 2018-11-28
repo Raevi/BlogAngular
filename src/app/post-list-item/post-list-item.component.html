@@ -8,6 +8,7 @@
       <small class="text-muted">{{ post.created_at | date }}</small>
     </div>
     <p class="mb-1">{{ post.content }}</p>
+    <a [routerLink]="[post.id]">Détails</a>&nbsp;
     <button type="button" class="btn btn-success" (click)="onLoveIt(1)">love it</button>
     &nbsp;
     <button type="button" class="btn btn-danger" (click)="onLoveIt(-1)">don't love it</button>

@@ -20,6 +20,13 @@ export class PostService  {
     incrementLikeItOf(index: number, value: number) {
         this.posts[index].loveIts += value;
     }
+
+    getPostById(id: number){
+        const post = this.posts.find((postObj) => {
+            return postObj.id === id
+        });
+        return post;
+    }
   }
   
   export class Post{
