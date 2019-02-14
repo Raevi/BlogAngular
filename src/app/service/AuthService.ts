@@ -1,4 +1,4 @@
-export class AuthService{
+export class AuthenticationService{
     isAuth = false;
 
     signIn(){

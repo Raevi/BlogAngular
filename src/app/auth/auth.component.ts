@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../service/AuthService';
+import { AuthenticationService } from '../service/AuthService';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ export class AuthComponent implements OnInit {
 
   authStatus: boolean;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthenticationService, private router: Router) { }
 
   ngOnInit() {
     this.authStatus = this.authService.isAuth;
