@@ -1,5 +1,10 @@
+import { Subject } from 'rxjs/Rx';
+
 export class PostService  { 
-    posts: Post[] = [   
+  
+    postSubject = new Subject<any[]>();
+  
+    private posts: Post[] = [   
         new Post("Mon Premier Post", 
                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras viverra eget orci at vehicula. Ut tristique augue sit amet volutpat eleifend. Suspendisse ut convallis nunc, id placerat felis.", 
                  new Date(2017, 12, 24, 15, 30, 0), 1),
@@ -11,14 +16,20 @@ export class PostService  {
                  new Date(218, 10, 25, 13, 47, 13), 3),
       ];   
 
+    emitPostSubject(){
+        this.postSubject.next(this.posts.slice())
+    }
+
     resetOnAll() {
         for(let post of this.posts) {
           post.loveIts = 0;
         }
+        this.emitPostSubject();
     }
 
     incrementLikeItOf(index: number, value: number) {
         this.posts[index].loveIts += value;
+        this.emitPostSubject();
     }
 
     getPostById(id: number){
